@@ -43,12 +43,13 @@ class Watch:
 def demo():
     w = Watch(stale_after=0.5)
     t0 = time.time()
-    w.observe("board", "card-58 unclaimed 2h", True, "dozer", now=t0)
+    w.observe("board", "card-58 unclaimed 2h", True, "badger", now=t0)
     w.observe("x", "like count moved", False, now=t0)              # noise
     w.observe("flow", "render at 40%", False, now=t0)              # routine
-    w.observe("board", "old card still dim", True, "skid", now=t0 - 10)  # stale
+    w.observe("board", "old card still dim", True, "wren", now=t0 - 10)  # stale
     w.observe("leases", "write lease free", True, "")              # no owner
     print(json.dumps(w.triage(now=t0), indent=1))
 
 if __name__ == "__main__":
     demo()
+
